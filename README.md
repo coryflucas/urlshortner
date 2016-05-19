@@ -27,4 +27,4 @@ POST /api/shorturl HTTP/1.1
 }
 ```
 
-Following the link will result in a 301 to the original URL.
+Following the link will result in a 302 to the original URL.
