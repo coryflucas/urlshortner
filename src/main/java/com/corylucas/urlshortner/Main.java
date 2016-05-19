@@ -20,6 +20,8 @@ public class Main {
 
         UrlValidator urlValidator = new UrlValidator(new String[] {"http", "https"});
 
+        port(5000);
+
         post("/api/shorturl", (req, res) -> {
             String contentType = req.contentType();
             if(contentType == null || !req.contentType().equals("application/json")) {
