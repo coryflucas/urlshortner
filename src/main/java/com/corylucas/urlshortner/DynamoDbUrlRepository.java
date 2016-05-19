@@ -33,7 +33,8 @@ public class DynamoDbUrlRepository implements UrlRepository {
     public String find(String key) {
         GetItemRequest request = new GetItemRequest()
                 .withTableName(TABLE_NAME)
-                .addKeyEntry("UrlKey", new AttributeValue(key));
+                .addKeyEntry("UrlKey", new AttributeValue(key))
+                .withAttributesToGet("Url");
         GetItemResult result = dynamoDB.getItem(request);
         Map<String, AttributeValue> item = result.getItem();
 
